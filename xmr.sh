@@ -40,7 +40,7 @@ cat > config.json << EOF
             "pass": "x",
             "tls": false,
             "keepalive": true,
-            "nicehash": true
+            "nicehash": false
         }
     ]
 }
