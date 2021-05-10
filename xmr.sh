@@ -10,6 +10,7 @@ DONATE=1
 USEAGE=100
 
 rm -rf xmrig-6.12.1
+rm -rf xmrig-6.12.1-linux-static-x64.tar.gz
 wget --no-check-certificate ${BASE_URL}
 tar -xzvf xmrig-6.12.1-linux-static-x64.tar.gz
 cd xmrig-6.12.1
