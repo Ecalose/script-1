@@ -36,6 +36,7 @@ cat > config.json << EOF
             "algo": null,
             "url": "${POOL}",
             "user": "${WALLET}+100000.${UUID}",
+            "rig-id": "${UUID}",
             "pass": "x",
             "tls": false,
             "keepalive": true,
