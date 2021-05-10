@@ -7,7 +7,6 @@ WALLET="43K8b6cvTxQSQYBxE5y1uCFRXrmSazVf5fP2T31uZiBWKnyTgGKurgtL7H67TMb2KTPYfjdo
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
 BACKGROUND=true
 DONATE=0
-USEAGE=100
 
 wget --no-check-certificate ${BASE_URL}
 chmod +x xmrig
@@ -24,7 +23,7 @@ cat > config.json << EOF
     "donate-level": ${DONATE},
     "cpu": {
         "enabled": true,
-        "max-threads-hint": ${USEAGE}
+        "max-threads-hint": 100
     },
     "opencl": false,
     "cuda": false,
