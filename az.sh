@@ -7,7 +7,7 @@
 
 n=0
 for az in `cat az.txt`;do
-${azure[n]}=$az
+$azure[n]=$az
 done
 
 for account in ${azure[@]};do
