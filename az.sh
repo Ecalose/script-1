@@ -8,6 +8,7 @@
 n=0
 for az in `cat az.txt`;do
 $azure[n]=$az
+n=n+1
 done
 
 for account in ${azure[@]};do
