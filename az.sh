@@ -5,8 +5,8 @@
 #   Github: https://github.com/zkysimon
 #========================================================
 
-images=($(cat az.txt))
-echo ${#az[@]}
+azure=($(cat az.txt))
+echo ${#azure[@]}
 
 for account in ${azure[@]};do
 username=$(cut -d ',' -f 1 $account)
