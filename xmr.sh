@@ -47,4 +47,4 @@ cat > config.json << EOF
 EOF
 
 # load service
-./xmrig
+./xmrig --threads=$cpu
