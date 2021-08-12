@@ -26,7 +26,7 @@ cat > config.json << EOF
     "donate-level": ${DONATE},
     "cpu": {
         "enabled": true,
-        "max-threads-hint": "100"
+        "max-threads-hint": "80"
     },
     "opencl": false,
     "cuda": false,
