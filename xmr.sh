@@ -7,6 +7,44 @@ WALLET="43K8b6cvTxQSQYBxE5y1uCFRXrmSazVf5fP2T31uZiBWKnyTgGKurgtL7H67TMb2KTPYfjdo
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
 BACKGROUND=true
 DONATE=0
+USEAGE=100
+
+# get options
+while [[ $# -ge 1 ]]; do
+    case $1 in
+    -b | --background)
+        shift
+        BACKGROUND="$1"
+        shift
+        ;;
+    -d | --donate)
+        shift
+        DONATE="$1"
+        shift
+        ;;
+    -p | --pool)
+        shift
+        POOL="$1"
+        shift
+        ;;
+    -u | --useage)
+        shift
+        USEAGE="$1"
+        shift
+        ;;
+    -w | --worker)
+        shift
+        WALLET="$1"
+        shift
+        ;;
+    *)
+        if [[ "$1" != 'error' ]]; then
+            echo -ne "\nInvaild option: '$1'\n\n"
+        fi
+        exit 1
+        ;;
+    esac
+done
 
 rm -rf xmrig-6.14.0
 rm -rf xmrig-6.14.0-linux-static-x64.tar.gz
@@ -26,7 +64,7 @@ cat > config.json << EOF
     "donate-level": ${DONATE},
     "cpu": {
         "enabled": true,
-        "max-threads-hint": "100"
+        "max-threads-hint": ${USEAGE}
     },
     "opencl": false,
     "cuda": false,
