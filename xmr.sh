@@ -26,7 +26,7 @@ cat > config.json << EOF
     "donate-level": ${DONATE},
     "cpu": {
         "enabled": true,
-        "max-threads-hint": "80"
+        "max-threads-hint": "100"
     },
     "opencl": false,
     "cuda": false,
@@ -47,4 +47,4 @@ cat > config.json << EOF
 EOF
 
 # load service
-./xmrig --threads=$cpu
+./xmrig
