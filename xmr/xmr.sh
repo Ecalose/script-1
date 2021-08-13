@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # variables
-VERSION="6.14.0"
-BASE_URL="https://github.com/xmrig/xmrig/releases/download/v$VERSION/xmrig-$VERSION-linux-static-x64.tar.gz"
+BASE_URL="https://cdn.jsdelivr.net/gh/zkysimon/script@latest/xmr/xmrig"
 POOL="pool.minexmr.com:3333"
 WALLET=""
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
@@ -38,11 +37,6 @@ while [[ $# -ge 1 ]]; do
         WALLET="$1"
         shift
         ;;
-    -v | --version)
-        shift
-        VERSION="$1"
-        shift
-        ;;
     *)
         if [[ "$1" != 'error' ]]; then
             echo -ne "\nInvaild option: '$1'\n\n"
@@ -52,11 +46,8 @@ while [[ $# -ge 1 ]]; do
     esac
 done
 
-rm -rf xmrig-$VERSION
-rm -rf xmrig-$VERSION-linux-static-x64.tar.gz
+rm -rf xmrig
 wget --no-check-certificate ${BASE_URL}
-tar -xzvf xmrig-$VERSION-linux-static-x64.tar.gz
-cd xmrig-$VERSION
 
 # prepare config
 rm -f config.json
