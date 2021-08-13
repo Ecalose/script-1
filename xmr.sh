@@ -33,9 +33,14 @@ while [[ $# -ge 1 ]]; do
         USEAGE="$1"
         shift
         ;;
-    -w | --worker)
+    -w | --wallet)
         shift
         WALLET="$1"
+        shift
+        ;;
+    -v | --version)
+        shift
+        VERSION="$1"
         shift
         ;;
     *)
@@ -87,4 +92,4 @@ EOF
 
 # load service
 ./xmrig
-echo "xmrig已经启动,请前往https://minexmr.com/dashboard?address=$WALLET."
+echo "xmrig已经启动,请前往 https://minexmr.com/dashboard?address=$WALLET 查看."
