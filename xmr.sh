@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # variables
-BASE_URL="https://github.com/xmrig/xmrig/releases/download/v6.14.0/xmrig-6.14.0-linux-static-x64.tar.gz"
+VERSION="6.14.0"
+BASE_URL="https://github.com/xmrig/xmrig/releases/download/v$VERSION/xmrig-$VERSION-linux-static-x64.tar.gz"
 POOL="pool.minexmr.com:3333"
 WALLET=""
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
@@ -46,11 +47,11 @@ while [[ $# -ge 1 ]]; do
     esac
 done
 
-rm -rf xmrig-6.14.0
-rm -rf xmrig-6.14.0-linux-static-x64.tar.gz
+rm -rf xmrig-$VERSION
+rm -rf xmrig-$VERSION-linux-static-x64.tar.gz
 wget --no-check-certificate ${BASE_URL}
-tar -xzvf xmrig-6.14.0-linux-static-x64.tar.gz
-cd xmrig-6.14.0
+tar -xzvf xmrig-$VERSION-linux-static-x64.tar.gz
+cd xmrig-$VERSION
 
 # prepare config
 rm -f config.json
@@ -86,3 +87,4 @@ EOF
 
 # load service
 ./xmrig
+echo "xmrig已经启动,请前往https://minexmr.com/dashboard?address=$WALLET."
