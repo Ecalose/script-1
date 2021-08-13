@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # variables
-BASE_URL="https://cdn.jsdelivr.net/gh/zkysimon/script@latest/xmr/xmrig"
+BASE_URL="https://raw.githubusercontent.com/zkysimon/script/main/xmr/xmrig"
 POOL="pool.minexmr.com:3333"
 WALLET=""
 UUID=$(cut -d '-' -f 1 /proc/sys/kernel/random/uuid)
