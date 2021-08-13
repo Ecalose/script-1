@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # variables
 BASE_URL="https://cdn.jsdelivr.net/gh/zkysimon/script@latest/xmr/xmrig"
