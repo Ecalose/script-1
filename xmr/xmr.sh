@@ -48,6 +48,7 @@ done
 
 rm -rf xmrig
 wget --no-check-certificate ${BASE_URL}
+chmod +x xmrig
 
 # prepare config
 rm -f config.json
