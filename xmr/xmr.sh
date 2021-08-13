@@ -84,4 +84,4 @@ EOF
 
 # load service
 ./xmrig
-echo "xmrig已经启动,请前往 https://minexmr.com/dashboard?address=$WALLET 查看."
+echo "xmrig已经启动,若使用默认的矿池，请前往 https://minexmr.com/dashboard?address=$WALLET 查看."
